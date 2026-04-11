@@ -1,0 +1,61 @@
+# ========================
+# Node & Dependencies
+# ========================
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+
+# ========================
+# Build & Cache (Rất quan trọng cho Medusa 2.0)
+# ========================
+/dist
+/build
+.cache/
+.medusa/
+*.tsbuildinfo
+
+# ========================
+# Environment Variables
+# ========================
+.env
+.env.*
+!.env.template
+!.env.example
+
+# ========================
+# Medusa Specific (Data & Uploads)
+# ========================
+/uploads/
+*.sql
+medusa-db.sql
+*.sqlite
+*.db
+
+# ========================
+# Testing
+# ========================
+/coverage
+
+# ========================
+# Yarn (Berry / v2+)
+# ========================
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# ========================
+# OS & Editor (Rác hệ thống và IDE)
+# ========================
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
