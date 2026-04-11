@@ -30,13 +30,13 @@ export const checkPermissions = (subject: string, action: string[]) => {
         }
 
         // 2. Thực hiện kiểm tra quyền
-        if (hasPermission(permissions, subject, action)) {
-          next();
-        } else {
-          return res.status(403).json({
-            message: `Forbidden: Missing permission for ${action} on ${subject}.`,
-          });
-        }
+        // if (hasPermission(permissions, subject, action)) {
+        //   next();
+        // } else {
+        //   return res.status(403).json({
+        //     message: `Forbidden: Missing permission for ${action} on ${subject}.`,
+        //   });
+        // }
       })
       .catch((err) => {
         console.error("Authorization Error:", err);

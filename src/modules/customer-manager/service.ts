@@ -22,7 +22,18 @@ class CustomerManagerModuleService extends MedusaService({
     device_id: string;
     device_list?: Record<string, unknown> | null;
   }) {
-    return await this.createCustomCustomers(data);
+    return await this.createCustomCustomers({
+      business_name: `${data.first_name} ${data.last_name}`,
+      code: data.email,
+      raw_card_id: {
+        first_name: data.first_name,
+        last_name: data.last_name,
+        email: data.email,
+        phone: data.phone,
+        device_id: data.device_id,
+        device_list: data.device_list,
+      },
+    });
   }
 
   /**
