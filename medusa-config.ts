@@ -6,6 +6,14 @@ module.exports = defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
     redisUrl: process.env.REDIS_URL,
+    // Supabase / managed Postgres often need TLS; rejectUnauthorized false avoids self-signed chain issues in dev
+    databaseDriverOptions: process.env.DATABASE_URL?.includes("supabase.com")
+      ? {
+          connection: {
+            ssl: { rejectUnauthorized: false },
+          },
+        }
+      : undefined,
 
     http: {
       storeCors: process.env.STORE_CORS!,
